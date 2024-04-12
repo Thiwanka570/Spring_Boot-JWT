@@ -5,11 +5,10 @@ import com.userloginbackend.userloginbackend.model.AuthenticationResponse;
 import com.userloginbackend.userloginbackend.model.User;
 import com.userloginbackend.userloginbackend.service.AuthenticationService;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
+@CrossOrigin("http://localhost:3000")
 public class AuthenticationController {
     private final AuthenticationService authservice;
 
@@ -30,4 +29,5 @@ public class AuthenticationController {
     ){
         return ResponseEntity.ok(authservice.authenticate(request));
     }
+
 }
