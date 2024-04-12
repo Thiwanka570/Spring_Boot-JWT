@@ -55,7 +55,7 @@ function Login() {
                     <label htmlFor="email">Email:</label>
                     <input
                         type="text"
-                        id="username"
+                        id="usernameLogin"
                         name="username"
                         value={formData.username}
                         onChange={handleChange}
@@ -66,7 +66,7 @@ function Login() {
                     <label htmlFor="password">Password:</label>
                     <input
                         type="password"
-                        id="password"
+                        id="passwordLogin"
                         name="password"
                         value={formData.password}
                         onChange={handleChange}

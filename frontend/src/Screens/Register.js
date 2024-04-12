@@ -1,4 +1,5 @@
-import { Axios } from 'axios';
+import axios from 'axios';
+
 import React, { useState } from 'react';
 
 function Register() {
@@ -19,10 +20,12 @@ function Register() {
   };
 
   const registerUser = async (e) => {
-    e.preventDefault();
-    const response = await Axios.post("/api/register", user);
+    console.log(user.firstName);
+    console.log(user.lastName);
+    console.log(user.username);
+    const response = await axios.post("https://127.0.0.1:8080/register/", user);
     if (response.status === 200) {
-      console.log('Register Faild !');
+      console.log('Register success !');
     } else {
       throw new Error('Register Faild !');
     }
@@ -37,7 +40,7 @@ function Register() {
   return (
     <div>
       <h2>Register</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={(e) => handleSubmit(e)}>
         <div>
           <label htmlFor="firstName">First Name:</label>
           <input
