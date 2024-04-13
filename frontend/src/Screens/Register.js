@@ -20,9 +20,6 @@ function Register() {
   };
 
   const registerUser = async (e) => {
-    console.log(user.firstName);
-    console.log(user.lastName);
-    console.log(user.username);
     const response = await axios.post("https://127.0.0.1:8080/register/", user);
     if (response.status === 200) {
       console.log('Register success !');
